@@ -1,26 +1,72 @@
+import Homework0902.LandLinePhone;
+import Homework0902.MobilePhone;
+import Homework0902.Phone;
+import Homework0902.RingAble;
+import Homework1.Work1;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
-        String myName = "Памужак Петр Дмитриевич";
+        Phone phone1 = new Phone();
+        Phone phone2 = new Phone();
 
-        int[] intArr = new int[]{2, 45, 13, -42, 63, 12, 43, 53, 12, 0, -4};
-        List<Integer> intList = IntStream.rangeClosed(1, 10).boxed().collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+        LandLinePhone landLinePhone1 = new LandLinePhone();
+        LandLinePhone landLinePhone2 = new LandLinePhone();
 
-        System.out.println("Работа с array:");
-        System.out.println("Исходный массив: " + Arrays.toString(intArr));
-        System.out.println("Сумма: " + Arrays.stream(intArr).sum());
-        System.out.println("Среднее: " + Arrays.stream(intArr).average().orElse(0));
-        System.out.println("\nРабота с List:");
-        System.out.println("Исходный лист: " + intList);
-        System.out.println("Сумма: " + intList.stream().mapToInt(Integer::intValue).sum());
-        System.out.println("Среднее: " + intList.stream().mapToInt(Integer::intValue).average().orElse(0));
+        MobilePhone mobilePhone1 = new MobilePhone();
+        MobilePhone mobilePhone2 = new MobilePhone();
+
+        phone1.receiveCall("Телефон 1");
+        phone2.receiveCall("Телефон 2");
+        landLinePhone1.receiveCall("Стационарный телефон 1");
+        landLinePhone2.receiveCall("Стационарный телефон 2");
+        mobilePhone1.receiveCall("Мобильный телефон 1");
+        mobilePhone2.receiveCall("Мобильный телефон 2");
+
         System.out.println();
 
-        System.out.println(myName);
+        phone1.ring();
+        phone2.ring();
+        landLinePhone1.ring();
+        landLinePhone2.ring();
+        mobilePhone1.ring();
+        mobilePhone2.ring();
+
+        System.out.println();
+
+        aboutPhone(phone1);
+        System.out.println(phone1 + "\n");
+
+        aboutPhone(phone2);
+        System.out.println(phone2 + "\n");
+
+        aboutPhone(landLinePhone1);
+        System.out.println(landLinePhone1 + "\n");
+
+        aboutPhone(landLinePhone2);
+        System.out.println(landLinePhone2 + "\n");
+
+        aboutPhone(mobilePhone1);
+        System.out.println(mobilePhone1 + "\n");
+
+        aboutPhone(mobilePhone2);
+        System.out.println(mobilePhone2 + "\n");
+
+        landLinePhone1.setModelName("Panasonic F300");
+        landLinePhone1.setNumber("(0291)52-4-14");
+        landLinePhone1.setCallable(true);
+
+        mobilePhone2.setModelName("Samsung S9");
+        mobilePhone2.setWeight(123.4f);
+
+        System.out.println(landLinePhone1);
+        System.out.println();
+        System.out.println(mobilePhone2);
+    }
+
+    public static void aboutPhone(RingAble ringAble) {
+        ringAble.ring();
     }
 }
