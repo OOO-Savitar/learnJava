@@ -5,15 +5,15 @@ import java.util.*;
 public class Homework1302 {
 
     public void run() {
-//        List<String> list = new ArrayList<String>();
-//        Scanner scanner = new Scanner(System.in);
-//
-//        while (true) {
-//            String string = scanner.nextLine();
-//            if (string.equalsIgnoreCase("end")) break;
-//            else list.add(string);
-//        }
-//        System.out.println(list);
+        List<String> list = new ArrayList<String>();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            String string = scanner.nextLine();
+            if (string.equalsIgnoreCase("end")) break;
+            else list.add(string);
+        }
+        System.out.println(list);
 
         Map<String, Cat> cats = new HashMap<>();
 
