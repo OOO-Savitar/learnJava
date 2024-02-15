@@ -1,6 +1,6 @@
 package Homework0902;
 
-public class Run0902 {
+public class Homework0902 {
 
     public void run() {
         Phone phone1 = new Phone();
