@@ -31,9 +31,4 @@ public class Cat {
         this.color = color;
         return this;
     }
-
-    @Override
-    public String toString() {
-        return String.format("Имя кота: %s; Цвет кота: %s", this.name, this.color);
-    }
 }

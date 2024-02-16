@@ -15,6 +15,18 @@ public class Homework1302 {
         }
         System.out.println(list);
 
+        Map<String, Cat> cats = getStringCatMap();
+
+        System.out.println(cats.keySet());
+        System.out.println();
+//        cats.values().forEach(System.out::println);
+
+        for(Map.Entry<String, Cat> entry : cats.entrySet()) {
+            System.out.printf("%s - %s%n", entry.getKey(), entry.getValue().getColor());
+        }
+    }
+
+    private static Map<String, Cat> getStringCatMap() {
         Map<String, Cat> cats = new HashMap<>();
 
         Cat cat1 = new Cat("Барсик", "Рыжий");
@@ -38,9 +50,6 @@ public class Homework1302 {
         cats.put(cat8.getName(), cat8);
         cats.put(cat9.getName(), cat9);
         cats.put(cat10.getName(), cat10);
-
-        System.out.println(cats.keySet());
-        System.out.println();
-        cats.values().forEach(System.out::println);
+        return cats;
     }
 }
